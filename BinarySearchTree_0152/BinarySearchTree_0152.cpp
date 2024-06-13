@@ -70,9 +70,11 @@ public:
         parent = nullptr;
         while ((currentNode != nullptr) && (currentNode->info != element))
         {
-
-
-
+            parent = currentNode;
+            if (element < currentNode->info)
+                currentNode = currentNode->leftChild;
+            else
+                currentNode = currentNode->rightChild;
         }
     }
 
