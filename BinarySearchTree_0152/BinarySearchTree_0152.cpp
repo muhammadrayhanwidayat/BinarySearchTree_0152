@@ -90,7 +90,7 @@ public:
             inorder(ptr->rightChild);
         }
     }
-
+    //membuat dan mendefinisika prosedur preorder
     void preorder(Node* ptr) {
 
         if (ROOT == nullptr) {
@@ -99,8 +99,23 @@ public:
         }
         if (ptr != nullptr) {
             cout << ptr->info << " ";
-            inorder(ptr->leftChild);
-            inorder(ptr->rightChild);
+            preorder(ptr->leftChild);
+            preorder(ptr->rightChild);
+        }
+    }
+
+    //membuat dan mendefinisika prosedur post order
+    void postorder(Node* ptr) {
+
+        if (ROOT == nullptr) {
+            cout << "Tree is empty" << endl;
+            return;
+        }
+        if (ptr != nullptr) {
+            postorder(ptr->leftChild);
+            postorder(ptr->rightChild);
+            cout << ptr->info << " ";
+
         }
     }
 
