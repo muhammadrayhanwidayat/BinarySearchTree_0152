@@ -77,6 +77,19 @@ public:
                 currentNode = currentNode->rightChild;
         }
     }
+    //membuat dan mendefinisikan prosedur inorder
+    void inorder(Node* ptr) {
+
+        if (ROOT == nullptr) {
+            cout << "Tree is empty" << endl;
+            return;
+        }
+        if (ptr != nullptr) {
+            inorder(ptr->leftChild);
+            cout << ptr->info << " ";
+            inorder(ptr->rightChild);
+        }
+    }
 
 };
 
